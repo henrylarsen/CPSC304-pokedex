@@ -1,8 +1,0 @@
-CREATE TABLE Medic
-	(Cname     CHARACTER(20),
-	Hospital   CHARACTER(20),
-	PRIMARY KEY (Cname),
-	FOREIGN KEY (Cname)
-    REFERENCES ShowCharacter
-    ON DELETE CASCADE
-    ON UPDATE CASCADE);

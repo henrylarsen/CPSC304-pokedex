@@ -1,5 +1,0 @@
-CREATE TABLE Gym
-	(Gname		CHARACTER(20),
-	location	CHARACTER(20),
-	region 	CHARACTER(20),
-	PRIMARY KEY (Gname));
