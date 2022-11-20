@@ -4,14 +4,11 @@ CREATE TABLE Buys
     Cname         CHARACTER(20),
 	PRIMARY KEY (Cname,PType, EpisodeNumber),
 	FOREIGN KEY (Cname)
-    REFERENCES ShowCharacter
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+        REFERENCES ShowCharacter
+        ON DELETE CASCADE,
     FOREIGN KEY (PType)
-    REFERENCES Pokeball
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+        REFERENCES Pokeball
+        ON DELETE CASCADE,
     FOREIGN KEY (EpisodeNumber)
     REFERENCES Episode
-    ON DELETE CASCADE
-	ON UPDATE CASCADE);
+    ON DELETE CASCADE);

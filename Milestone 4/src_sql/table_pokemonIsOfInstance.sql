@@ -5,6 +5,5 @@ CREATE TABLE PokemonIsOfInstance
 	PRIMARY KEY (ID, instanceNum),
     FOREIGN KEY (id)
     REFERENCES Pokemon
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+    ON DELETE CASCADE,
     UNIQUE(instanceNum));

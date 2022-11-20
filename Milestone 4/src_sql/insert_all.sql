@@ -1,4 +1,7 @@
 START insert_attack;
+START insert_pokemon;
+START insert_pokemonIsOfInstance;
+START insert_showCharacter;
 START insert_badGuy;
 START insert_battleAt;
 START insert_buys;
@@ -11,9 +14,6 @@ START insert_heals;
 START insert_isTypes;
 START insert_medic;
 START insert_pokeball;
-START insert_pokemon;
-START insert_pokemonIsOfInstance;
-START insert_showCharacter;
 START insert_trainer;
 START insert_trainsAt;
 START insert_type;

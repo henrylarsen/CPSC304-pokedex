@@ -1,19 +1,21 @@
-DROP TABLE attack;
-DROP TABLE badGuy;
 DROP TABLE battleAt;
 DROP TABLE buys;
 DROP TABLE catches;
-DROP TABLE episode;
-DROP TABLE gym;
+DROP TABLE heals;
+DROP TABLE medic;
+DROP TABLE trainsAt;
+
+DROP TABLE badGuy;
 DROP TABLE hasAttack;
 DROP TABLE hasWeakness;
-DROP TABLE heals;
-DROP TABLE isTypes;
-DROP TABLE medic;
+DROP TABLE isType;
+DROP TABLE pokemonIsOfInstance;
+DROP TABLE trainer;
+
+DROP TABLE attack;
+DROP TABLE episode;
+DROP TABLE gym;
 DROP TABLE pokeball;
 DROP TABLE pokemon;
-DROP TABLE pokemonIsOfInstance;
 DROP TABLE showCharacter;
-DROP TABLE trainer;
-DROP TABLE trainsAt;
 DROP TABLE type;

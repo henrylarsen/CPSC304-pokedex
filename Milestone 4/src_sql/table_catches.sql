@@ -5,18 +5,14 @@ CREATE TABLE Catches
 	PType         CHARACTER(20),
 	PRIMARY KEY (instanceNum, CName, EpisodeNumber, PType),
 	FOREIGN KEY (instanceNum)
-  	REFERENCES PokemonIsOfInstance
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+  		REFERENCES PokemonIsOfInstance (instanceNum)
+    	ON DELETE CASCADE,
     FOREIGN KEY (CName)
-  	REFERENCES ShowCharacter
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+  		REFERENCES ShowCharacter
+    	ON DELETE CASCADE,
     FOREIGN KEY (EpisodeNumber)
   	REFERENCES Episode
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+    ON DELETE CASCADE,
     FOREIGN KEY (PType)
   	REFERENCES Pokeball
-    ON DELETE CASCADE
-    ON UPDATE CASCADE);
+    ON DELETE CASCADE);
