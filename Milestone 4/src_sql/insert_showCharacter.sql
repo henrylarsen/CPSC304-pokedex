@@ -1,21 +1,29 @@
-INSERT INTO showCharacter(CName, age) VALUES 
-('Ella', 12), 
-('Jenna', 13),
-('Gabriella', 14),
-('Taylor', 15),
-('Rihanna', 16),
-('Chris', 22),
-('Matt', 45),
-('Jeffrey', 54),
-('Alice', 12),
-('Jenkins', 23),
-('Katie', 74),
-('Danae', 42),
-('Holly', 32),
-('Erin', 21),
-('Amanda', 43),
-('Tyrone', 12),
-('Tyreese', 13),
-('Daquan', 14),
-('Charlise', 15),
-('Abneet', 16);
+INSERT INTO showCharacter(CName, age) VALUES ('Ella', 12); 
+INSERT INTO showCharacter(CName, age) VALUES ('Ash', 10);
+INSERT INTO showCharacter(CName, age) VALUES ('Jenna', 13);
+INSERT INTO showCharacter(CName, age) VALUES ('Gabriella', 14);
+INSERT INTO showCharacter(CName, age) VALUES ('Taylor', 15);
+INSERT INTO showCharacter(CName, age) VALUES ('Rihanna', 16);
+INSERT INTO showCharacter(CName, age) VALUES ('Chris', 22);
+INSERT INTO showCharacter(CName, age) VALUES ('Matt', 45);
+INSERT INTO showCharacter(CName, age) VALUES ('Jeffrey', 54);
+INSERT INTO showCharacter(CName, age) VALUES ('Alice', 12);
+INSERT INTO showCharacter(CName, age) VALUES ('Jenkins', 23);
+INSERT INTO showCharacter(CName, age) VALUES ('Katie', 74);
+INSERT INTO showCharacter(CName, age) VALUES ('Danae', 42);
+INSERT INTO showCharacter(CName, age) VALUES ('Holly', 32);
+INSERT INTO showCharacter(CName, age) VALUES ('Erin', 21);
+INSERT INTO showCharacter(CName, age) VALUES ('Amanda', 43);
+INSERT INTO showCharacter(CName, age) VALUES ('Tyrone', 12);
+INSERT INTO showCharacter(CName, age) VALUES ('Tyreese', 13);
+INSERT INTO showCharacter(CName, age) VALUES ('Daquan', 14);
+INSERT INTO showCharacter(CName, age) VALUES ('Charlise', 15);
+INSERT INTO showCharacter(CName, age) VALUES ('Abneet', 16);
+INSERT INTO showCharacter(CName, age) VALUES ('Misty', 10);
+INSERT INTO showCharacter(CName, age) VALUES ('Brock', 10);
+INSERT INTO showCharacter(CName, age) VALUES ('Officer Jenny', 20);
+INSERT INTO showCharacter(CName, age) VALUES ('Gary', 10);
+INSERT INTO showCharacter(CName, age) VALUES ('Ritchie', 10);
+INSERT INTO showCharacter(CName, age) VALUES ('Jessie', 10);
+INSERT INTO showCharacter(CName, age) VALUES ('James', 10);
+INSERT INTO showCharacter(CName, age) VALUES ('Professor Oak', 40);

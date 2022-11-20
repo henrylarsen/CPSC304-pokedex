@@ -1,6 +1,13 @@
-INSERT INTO trainer(CName, age) VALUES 
-('Tyrone', 12),
-('Tyreese', 13),
-('Daquan', 14),
-('Charlise', 15),
-('Abneet', 16);
+INSERT INTO trainer(CName, age) VALUES ('Tyrone', 12);
+INSERT INTO trainer(CName, age) VALUES ('Tyreese', 13);
+INSERT INTO trainer(CName, age) VALUES ('Daquan', 14);
+INSERT INTO trainer(CName, age) VALUES ('Charlise', 15);
+INSERT INTO trainer(CName, age) VALUES ('Abneet', 16);
+INSERT INTO trainer(CName, age) VALUES ('Ash', 10);
+INSERT INTO trainer(CName, age) VALUES ('Misty', 10);
+INSERT INTO trainer(CName, age) VALUES ('Brock', 10);
+INSERT INTO trainer(CName, age) VALUES ('Gary', 10);
+INSERT INTO trainer(CName, age) VALUES ('Ritchie', 10);
+INSERT INTO trainer(CName, age) VALUES ('Jessie', 10);
+INSERT INTO trainer(CName, age) VALUES ('James', 10);
+INSERT INTO trainer(CName, age) VALUES ('Professor Oak', 40);
