@@ -5,3 +5,18 @@ INSERT INTO attack(AttackName, Type, Damage) VALUES ('Tackle', 'Normal', 40);
 INSERT INTO attack(AttackName, Type, Damage) VALUES ('Peck', 'Flying', 35);
 INSERT INTO attack(AttackName, Type, Damage) VALUES ('Thunder Shock', 'Electric', 40);
 INSERT INTO attack(AttackName, Type, Damage) VALUES ('Hypnosis', 'Psychic', 0);
+INSERT INTO attack(AttackName, Type, Damage) VALUES ('Flamethrower', 'Fire', 90);
+INSERT INTO attack(AttackName, Type, Damage) VALUES ('Bug Bite', 'Bug', 60);
+INSERT INTO attack(AttackName, Type, Damage) VALUES ('Struggle', 'Normal', 50);
+INSERT INTO attack(AttackName, Type, Damage) VALUES ('Bite', 'Dark', 60);
+INSERT INTO attack(AttackName, Type, Damage) VALUES ('Sing', 'Normal', 0);
+INSERT INTO attack(AttackName, Type, Damage) VALUES ('Seed Bomb', 'Grass', 80);
+INSERT INTO attack(AttackName, Type, Damage) VALUES ('Spore', 'Grass', 0);
+INSERT INTO attack(AttackName, Type, Damage) VALUES ('Thrash', 'Normal', 120);
+INSERT INTO attack(AttackName, Type, Damage) VALUES ('Teleport', 'Psychic', 0);
+INSERT INTO attack(AttackName, Type, Damage) VALUES ('Slam', 'Normal', 80);
+INSERT INTO attack(AttackName, Type, Damage) VALUES ('Bubble Beam', 'Water', 65);
+INSERT INTO attack(AttackName, Type, Damage) VALUES ('Aurora Beam', 'Ice', 65);
+INSERT INTO attack(AttackName, Type, Damage) VALUES ('Swords Dance', 'Normal', 0);
+INSERT INTO attack(AttackName, Type, Damage) VALUES ('Transform', 'Normal', 0);
+

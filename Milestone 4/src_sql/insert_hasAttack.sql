@@ -105,3 +105,210 @@ INSERT INTO hasAttack(AttackName, ID) VALUES ('Tackle', 136);
 INSERT INTO hasAttack(AttackName, ID) VALUES ('Tackle', 137);
 INSERT INTO hasAttack(AttackName, ID) VALUES ('Tackle', 143);
 
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Peck', 15);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Peck', 21);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Peck', 22);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Peck', 32);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Peck', 33);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Peck', 34);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Peck', 83);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Peck', 84);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Peck', 85);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Peck', 118);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Peck', 119);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Peck', 144);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Peck', 145);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Peck', 146);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thunder Shock', 25);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thunder Shock', 26);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thunder Shock', 74);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thunder Shock', 75);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thunder Shock', 76);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thunder Shock', 81);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thunder Shock', 82);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thunder Shock', 100);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thunder Shock', 101);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thunder Shock', 125);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thunder Shock', 135);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thunder Shock', 137);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thunder Shock', 145);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 38);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 41);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 53);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 54);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 55);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 60);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 61);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 62);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 64);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 65);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 77);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 78);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 92);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 93);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 94);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 96);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 97);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 102);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 103);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 122);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Hypnosis', 144);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Flamethrower', 4);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Flamethrower', 5);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Flamethrower', 6);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Flamethrower', 37);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Flamethrower', 38);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Flamethrower', 58);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Flamethrower', 59);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Flamethrower', 126);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Flamethrower', 136);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Flamethrower', 146);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bug Bite', 10);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bug Bite', 12);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bug Bite', 13);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bug Bite', 15);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bug Bite', 127);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Struggle', 11);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Struggle', 14);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 7);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 8);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 9);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 19);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 20);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 23);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 24);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 29);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 30);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 31);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 41);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 42);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 52);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 53);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 58);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 59);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 88);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 89);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 115);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 130);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 133);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 134);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 135);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 136);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 138);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 139);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 142);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bite', 143);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Sing', 35);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Sing', 36);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Sing', 39);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Sing', 40);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Sing', 113);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Sing', 124);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Sing', 131);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Seed Bomb', 1);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Seed Bomb', 2);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Seed Bomb', 3);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Seed Bomb', 43);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Seed Bomb', 44);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Seed Bomb', 45);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Seed Bomb', 52);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Seed Bomb', 53);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Seed Bomb', 102);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Seed Bomb', 103);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Seed Bomb', 114);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Seed Bomb', 143);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Seed Bomb', 151);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Spore', 46);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Spore', 47);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thrash', 34);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thrash', 52);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thrash', 56);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thrash', 57);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thrash', 84);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thrash', 85);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thrash', 104);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thrash', 105);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thrash', 108);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thrash', 124);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thrash', 127);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thrash', 128);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Thrash', 130);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Teleport', 63);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Teleport', 64);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Teleport', 65);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Teleport', 150);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 23);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 24);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 25);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 26);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 69);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 70);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 71);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 83);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 95);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 98);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 99);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 108);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 114);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 147);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 148);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Slam', 149);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bubble Beam', 7);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bubble Beam', 8);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bubble Beam', 9);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bubble Beam', 60);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bubble Beam', 61);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bubble Beam', 62);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bubble Beam', 72);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bubble Beam', 73);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bubble Beam', 98);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bubble Beam', 99);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bubble Beam', 116);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bubble Beam', 117);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bubble Beam', 120);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Bubble Beam', 121);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Aurora Beam', 37);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Aurora Beam', 38);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Aurora Beam', 86);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Aurora Beam', 87);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Aurora Beam', 90);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Aurora Beam', 91);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Aurora Beam', 134);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Swords Dance', 20);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Swords Dance', 27);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Swords Dance', 28);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Swords Dance', 71);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Swords Dance', 83);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Swords Dance', 84);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Swords Dance', 85);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Swords Dance', 98);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Swords Dance', 99);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Swords Dance', 105);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Swords Dance', 123);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Swords Dance', 127);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Swords Dance', 141);
+
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Transform', 132);
+INSERT INTO hasAttack(AttackName, ID) VALUES ('Transform', 151);
+
+
+
+
+
+
+
