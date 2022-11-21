@@ -19,5 +19,3 @@ START table_buys;
 START table_catches;
 START table_heals;
 START table_medic;
-
-START insert_all;

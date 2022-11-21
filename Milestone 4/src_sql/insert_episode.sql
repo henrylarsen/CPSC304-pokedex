@@ -1,3 +1,5 @@
+set define off
+
 INSERT INTO episode(title, EpisodeNumber) VALUES ('Pokémon I Choose You!', 1);
 INSERT INTO episode(title, EpisodeNumber) VALUES ('Pokémon Emergency!', 2);
 INSERT INTO episode(title, EpisodeNumber) VALUES ('Ash Catches a Pokémon', 3);

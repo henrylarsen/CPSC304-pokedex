@@ -2,7 +2,7 @@ INSERT INTO type(TName) VALUES ('Normal');
 INSERT INTO type(TName) VALUES ('Fire');
 INSERT INTO type(TName) VALUES ('Water'); 
 INSERT INTO type(TName) VALUES ('Grass'); 
-INSERT INTO type(TName) VALUES ('Eletric'); 
+INSERT INTO type(TName) VALUES ('Electric'); 
 INSERT INTO type(TName) VALUES ('Ice'); 
 INSERT INTO type(TName) VALUES ('Fighting'); 
 INSERT INTO type(TName) VALUES ('Poison'); 

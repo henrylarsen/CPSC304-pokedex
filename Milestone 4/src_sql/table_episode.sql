@@ -1,4 +1,4 @@
 CREATE TABLE Episode
-	(title	CHARACTER(20),
+	(title	CHARACTER(40),
 	EpisodeNumber	INTEGER,
 	PRIMARY KEY (EpisodeNumber));
