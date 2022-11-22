@@ -33,3 +33,4 @@ INSERT INTO showCharacter(CName, age) VALUES ('Sabrina', 10);
 INSERT INTO showCharacter(CName, age) VALUES ('Erika', 10);
 INSERT INTO showCharacter(CName, age) VALUES ('Koga', 10);
 INSERT INTO showCharacter(CName, age) VALUES ('Blaine', 10);
+INSERT INTO showCharacter(CName, age) VALUES ('Bruno', 15);

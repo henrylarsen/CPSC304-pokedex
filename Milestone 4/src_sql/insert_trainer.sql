@@ -9,3 +9,4 @@ INSERT INTO trainer(CName, age) VALUES ('Ritchie', 10);
 INSERT INTO trainer(CName, age) VALUES ('Jessie', 10);
 INSERT INTO trainer(CName, age) VALUES ('James', 10);
 INSERT INTO trainer(CName, age) VALUES ('Professor Oak', 40);
+INSERT INTO trainer(CName, age) VALUES ('Bruno', 15);
