@@ -1,9 +1,9 @@
-INSERT INTO gym(Gname, location, region) VALUES ('Gym 1', 'Pewter city', 'Kanto');
-INSERT INTO gym(Gname, location, region) VALUES ('Gym 2', 'Cerulean city', 'Kanto');
-INSERT INTO gym(Gname, location, region) VALUES ('Gym 3', 'Vermilion city', 'Kanto');
-INSERT INTO gym(Gname, location, region) VALUES ('Gym 4', 'Celadon city', 'Kanto');
-INSERT INTO gym(Gname, location, region) VALUES ('Gym 5', 'Fuchsia city', 'Kanto');
-INSERT INTO gym(Gname, location, region) VALUES ('Gym 6', 'Saffron city', 'Kanto');
-INSERT INTO gym(Gname, location, region) VALUES ('Gym 7', 'Cinnabar island', 'Kanto');
-INSERT INTO gym(Gname, location, region) VALUES ('Gym 8', 'Seafoam islands', 'Kanto');
-INSERT INTO gym(Gname, location, region) VALUES ('Gym 9', 'Viridian city', 'Kanto');
+INSERT INTO gym(Gname, location, region) VALUES ('Pewter City Gym', 'Pewter City', 'Kanto');
+INSERT INTO gym(Gname, location, region) VALUES ('Cerulean City Gym', 'Cerulean City', 'Kanto');
+INSERT INTO gym(Gname, location, region) VALUES ('Vermilion City Gym', 'Vermilion City', 'Kanto');
+INSERT INTO gym(Gname, location, region) VALUES ('Celadon City Gym', 'Celadon City', 'Kanto');
+INSERT INTO gym(Gname, location, region) VALUES ('Fuchsia City Gym', 'Fuchsia City', 'Kanto');
+INSERT INTO gym(Gname, location, region) VALUES ('Saffron City Gym', 'Saffron City', 'Kanto');
+INSERT INTO gym(Gname, location, region) VALUES ('Cinnabar Island Gym', 'Cinnabar Island', 'Kanto');
+INSERT INTO gym(Gname, location, region) VALUES ('Seafoam Islands Gym', 'Seafoam Islands', 'Kanto');
+INSERT INTO gym(Gname, location, region) VALUES ('Viridian City Gym', 'Viridian City', 'Kanto');

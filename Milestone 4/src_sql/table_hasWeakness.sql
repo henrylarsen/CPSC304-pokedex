@@ -1,6 +1,6 @@
 CREATE TABLE hasWeakness
 	(id		INTEGER,
-	TName		CHARACTER(50),
+	TName		CHARACTER(20),
 	PRIMARY KEY (id, TName),
 	FOREIGN KEY (id)
     REFERENCES Pokemon
