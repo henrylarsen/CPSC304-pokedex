@@ -9,8 +9,8 @@ INSERT INTO Pokemon(id,height,weight,Pname,PSize) VALUES (:id, :height, :weight,
 -- Delete Operation: Delete a pokemon
 DELETE FROM pokemonIsOfInstance WHERE id = :id, instanceNum = :instanceNum;
 
--- Update a Pokemons height, weight, and size
-UPDATE Pokemon SET weight = :height, height = :weight, PSize = :PSize WHERE id = :id;
+-- Update a Pokemon instance isKnockedOut
+UPDATE pokemonIsOfInstance SET isKnockedOut = :isKnockedOut WHERE instanceNum = :instanceNum;
 
 -- Selection
 SELECT :attribute
@@ -25,6 +25,17 @@ WHERE :table.id = :Var1;
 SELECT :attributes
 FROM Pokemon;
 
--- Join
+-- AGGREGATION USING HAVING
+-- Select Type Names where > 10 pokemon have type. 
+SELECT TName
+FROM isType
+GROUP BY TName
+HAVING COUNT(TName) > 20;
+
+-- DIVISION
+
+
+
+
 
 
