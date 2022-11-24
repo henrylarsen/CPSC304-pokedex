@@ -16,3 +16,14 @@ WHERE NOT EXISTS
         -- SELECT TName
         -- FROM isType I2
         -- WHERE I2.id = I.id
+
+SELECT Pname
+FROM Pokemon
+WHERE NOT EXISTS (
+        SELECT T.TName
+        FROM type T
+        WHERE NOT EXISTS (
+                SELECT I.id
+                FROM isType I
+                WHERE I.id = p.id AND T.TName = I.TName
+        ));
