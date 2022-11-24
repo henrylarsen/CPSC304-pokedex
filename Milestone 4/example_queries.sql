@@ -59,7 +59,6 @@ WHERE P.id IN (
     FROM isType T1, isType T2
     WHERE T1.id = T2.id and T1.TName != T2.TName)
 GROUP BY P.Psize;
--- Produces number of small, medium and large pokemon with multiple types
 
 
 -- DIVISION
