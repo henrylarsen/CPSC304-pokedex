@@ -25,12 +25,40 @@ WHERE :table.id = :Var1;
 SELECT :attributes
 FROM Pokemon;
 
+
+-- Join  
+SELECT CName
+FROM showCharacter INNER JOIN buys
+WHERE showCharacter.CName = buys.CName AND buys.PType = :attribute;
+-- The idea of this query is that it should return the names of 
+-- the showCharacters with the type of pokeball specified.
+
+
+-- Aggregation using group-by
+SELECT Pokemon.Psize, Pokemon.Pname, min(height)
+FROM Pokemon
+WHERE Pokemon.weight >= :smallest_weight
+GROUP BY Pokemon.Psize;
+-- Select Pokemon of minimum height grouped by psize and all under weight specified by user
+
+
 -- AGGREGATION USING HAVING
 -- Select Type Names where > 10 pokemon have type. 
 SELECT TName
 FROM isType
 GROUP BY TName
 HAVING COUNT(TName) > 20;
+
+
+-- Nested aggregation with group by
+SELECT COUNT(P.id)
+FROM Pokemon P
+WHERE P.id IN (
+    SELECT T1.id
+    FROM isType T1, isType T2
+    WHERE T1.id = T2.id and T1.TName != T2.TName)
+GROUP BY P.Psize;
+
 
 -- DIVISION
 
