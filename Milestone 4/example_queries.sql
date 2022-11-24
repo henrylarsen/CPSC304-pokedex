@@ -37,7 +37,7 @@ WHERE showCharacter.CName = buys.CName AND buys.PType = :attribute;
 -- Aggregation using group-by
 SELECT Pokemon.Psize, Pokemon.Pname, min(height)
 FROM Pokemon
-WHERE Pokemon.weight >= :smallest_weight
+WHERE Pokemon.weight >= 10
 GROUP BY Pokemon.Psize;
 -- Select Pokemon of minimum height grouped by psize and all under weight specified by user
 
@@ -58,6 +58,7 @@ WHERE P.id IN (
     FROM isType T1, isType T2
     WHERE T1.id = T2.id and T1.TName != T2.TName)
 GROUP BY P.Psize;
+--produces the number of small, medium and large pokemon with multiple types
 
 
 -- DIVISION
