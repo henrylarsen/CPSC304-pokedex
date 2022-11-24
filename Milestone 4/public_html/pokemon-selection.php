@@ -13,8 +13,8 @@
 				<li><a href="./insert.php">INSERT</a></li>
 				<li><a href="./delete.php">DELETE</a></li>
 				<li><a href="./update.php">UPDATE</a></li>
-				<li><a href="./selection.php">SELECTION</a></li>
-				<li class="active"><a href="./projection.php">PROJECTION</a></li>
+				<li class="active"><a href="./selection.php">SELECTION</a></li>
+				<li><a href="./projection.php">PROJECTION</a></li>
 				<li><a href="./join.php">JOIN</a></li>
 				<li><a href="./division.php">DIVISION</a></li>
 				<li class="dropdown">
@@ -28,16 +28,35 @@
     		</ul>
         </div>
     </nav>
-    <form method="GET" action="projection.php">
+	<h3>Now select the attributes and compartors: </h3>
+	<form method="GET" action="pokemon-selection.php">
 		<div class="form-check">
-		<input type="checkbox" class="form-check-input" name="id" value="id-value">ID<br>
+            <h4>Which attributes would you like to project?</h4>
+            <input type="checkbox" class="form-check-input" name="id" value="id-value">ID<br>
             <input type="checkbox" class="form-check-input" name="name" value="name-value">Name<br>
             <input type="checkbox" class="form-check-input" name="height" value="height-value">Height<br>
             <input type="checkbox" class="form-check-input" name="weight" value="weight-value">Weight<br>
             <input type="checkbox" class="form-check-input" name="size" value="size-value">Size<br>
+            <hr>
+            <h4>Now select which attributes will be compared, and what the selection conditions should be</h4>
+            <p>WHERE  Field1 = :Var1 AND Field2 > :Var2 </p>
+            Field1: <select name="field-1" value="field-1">
+                <option value="id" selected>Id</option>
+                <option value="pname">Name</option>
+                <option value="height">Height</option>
+                <option value="weight">Weight</option>
+                <option value="psize">Size</option>
+            </select> <br>
+            Var1: <input type="text" name="var-1-text"> <br>
+            Field2: <select name="field-2" value="field-2">
+                <option value="id" selected>Id</option>
+                <option value="height">Height</option>
+                <option value="weight">Weight</option>
+            </select> <br>
+            Var2:  <input type="text" name="var-2-text"> <br>
 
-            <input type="hidden" id="getPokemonRequest" name="getPokemonRequest">
-            <input type="submit" value="getPokemon" name="getPokemon">
+            <input type="hidden" id="getTableRequest" name="getTableRequest">
+            <input type="submit" value="getTable" name="getTable">
 		</div>
 	</form>
 	<?php
@@ -128,15 +147,29 @@
                 printResult($result);
             }
 
-            function handleGETRequest($query) {
-                if (connectToDB()) {
-                    if (array_key_exists('getPokemon', $_GET)) {
-                        handleProjectRequest($query);
-                    }
-    
-                    disconnectFromDB();
+            function handlePokemonProjectRequest($query) {
+				global $db_conn;
+
+                if ($_GET['field-1'] == "id" || $_GET['field-1'] == "height" || $_GET['field-1'] == "weight") {
+                    $field_1_text = strval($_GET['var-1-text']);
+                } else {
+                    $field_1_text = "'".$_GET['var-1-text']."'";
                 }
-            }
+
+                $field_2_text = strval($_GET['var-2-text']);
+	
+				//Getting the values from user and insert data into the table
+
+                $bind1 = $_GET['field-1'];
+                $bind2 = $field_1_text;
+                $bind3 = $_GET['field-2'];
+                $bind4 = $field_2_text;
+
+
+                echo "SELECT " . $query . " FROM Pokemon WHERE ". $bind1 . " = ". $bind2 ." AND ". $bind3 ." > ". $bind4;
+				printResult(executePlainSQL("SELECT " . $query . " FROM Pokemon WHERE ". $bind1 . " = ". $bind2 ." AND ". $bind3 ." > ". $bind4));
+				oci_commit($db_conn);
+			}
 
             function getListofProjections() {
                 $listOfProjections = [];
@@ -158,8 +191,16 @@
                 return $listOfProjections;
             }
 
+            function handleRequest($query) {
+                if (connectToDB()) {
+                    if (array_key_exists('getTable', $_GET)) {   
+                        handlePokemonProjectRequest($query);
+                    }
+                    disconnectFromDB();
+                }
+            }
+
             function makeQuery() {
-                
                 $listOfProjections = getListofProjections();
                 $query = "";
 
@@ -170,14 +211,11 @@
                         $query = $query . $listOfProjections[$i] . ", ";
                     }
                 }
-                print "<br>";
-                print "<p>This is the query: SELECT " . $query . " FROM Pokemon  </p>";
-                $query = "SELECT " . $query . " FROM Pokemon";
                 return $query;
             }
 
-            if (isset($_GET['getPokemonRequest'])) {
-                handleGETRequest(makeQuery());
+            if (isset($_GET['getTableRequest'])) {
+                handleRequest(makeQuery());
             }
         ?>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

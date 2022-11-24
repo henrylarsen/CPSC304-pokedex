@@ -12,13 +12,7 @@
         <hr />
 
         <h2>Press this button to execute the query</h2>
-        <form method="GET" action="test.php">
-            <input type="checkbox" name="id" value="id-value">ID<br>
-            <input type="checkbox" name="name" value="name-value">Name<br>
-            <input type="checkbox" name="height" value="height-value">Height<br>
-            <input type="checkbox" name="weight" value="weight-value">Weight<br>
-            <input type="checkbox" name="size" value="size-value">Size<br>
-
+        <form method="GET" action="og_test.php">
             <input type="hidden" id="getPokemonRequest" name="getPokemonRequest">
             <input type="submit" value="getPokemon" name="getPokemon">
         </form>
@@ -60,22 +54,14 @@
             }
 
             function printResult($result) { //prints results from a select statement
-                $listofprojections = getListofProjections();
                 echo "<br>Retrieved data from table Pokemon:<br>";
-                echo "<table border=1>";
-                echo "<tr>";
-                for ($i =0; $i < sizeof($listofprojections); $i++) {
-                    echo "<th>" . $listofprojections[$i] . "</th>";
-                }
-                echo "</tr>";
+                echo "<table>";
+                echo "<tr><th>ID</th><th>PName</th></tr>";
     
                 while ($row = oci_fetch_array($result, OCI_BOTH)) {
-                    echo "<tr>";
-                    for ($i = 0; $i < sizeof($listofprojections); $i++) {
-                        echo "<td>" . $row[$listofprojections[$i]] . "</td>";
-                    }
-                    echo "<tr>";
-                }    
+                    echo "<tr><td>" . $row["ID"] . "</td><td>" . $row["PNAME"] . "</td></tr>"; //or just use "echo $row[0]"
+                }
+    
                 echo "</table>";
             }
 
@@ -104,63 +90,25 @@
                 oci_close($db_conn);
             }
 
-            function handleProjectRequest($query) {
+            function handleSelectRequest() {
                 global $db_conn;
-        
-                $result = executePlainSQL($query);
+
+                $result = executePlainSQL("SELECT * FROM Pokemon");
                 printResult($result);
             }
 
-            function handleGETRequest($query) {
+            function handleGETRequest() {
                 if (connectToDB()) {
                     if (array_key_exists('getPokemon', $_GET)) {
-                        handleProjectRequest($query);
+                        handleSelectRequest();
                     }
     
                     disconnectFromDB();
                 }
             }
 
-            function getListofProjections() {
-                $listOfProjections = [];
-                    if (isset($_GET['id'])) {
-                        array_push($listOfProjections, "ID");
-                    }
-                    if (isset($_GET['name'])) {
-                        array_push($listOfProjections, "PNAME");
-                    }
-                    if (isset($_GET['height'])) {
-                        array_push($listOfProjections, "HEIGHT");
-                    }
-                    if (isset($_GET['weight'])) {
-                        array_push($listOfProjections, "WEIGHT");
-                    }
-                    if (isset($_GET['size'])) {
-                        array_push($listOfProjections, "PSIZE");
-                    }
-                return $listOfProjections;
-            }
-
-            function makeQuery() {
-                
-                $listOfProjections = getListofProjections();
-                $query = "";
-
-                for ($i = 0; $i < sizeof($listOfProjections); $i++) {
-                    if ($i == sizeof($listOfProjections) - 1) {
-                        $query = $query . $listOfProjections[$i];
-                    } else {
-                        $query = $query . $listOfProjections[$i] . ", ";
-                    }
-                }
-                print "<br>";
-                print "<p>This is the query: SELECT " . $query . " FROM Pokemon  </p>";
-                $query = "SELECT " . $query . " FROM Pokemon";
-                return $query;
-            }
-
             if (isset($_GET['getPokemonRequest'])) {
-                handleGETRequest(makeQuery());
+                handleGETRequest();
             }
         ?>
     </body>
