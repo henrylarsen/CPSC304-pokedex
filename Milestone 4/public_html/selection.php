@@ -28,20 +28,34 @@
     		</ul>
         </div>
     </nav>
-	<h3>Make Projection on the Pokemon table:</h3>
-    <form action="./action_selection.php" method="post">
-		<div>
-			<div class="form-check form-check-inline">
-				<input class="form-check-input" type="radio" name="id" id="inlineRadioYes" value="yes">
-				<label class="form-check-label" for="inlineRadioYes">Yes</label>
-				<input class="form-check-input" type="radio" name="id" id="inlineRadioNo" value="no">
-				<label class="form-check-label" for="inlineRadioNo">No</label>
-			</div>
+	<h3>Select a table then clicke next</h3>
+	<form method="GET" action="selection.php">
+		<div class="form-check">
+            <select name="table" value="table">
+                <option value="Pokemon" selected>Pokemon</option>
+                <option value="isType">isType</option>
+                <option value="Attack">Attack</option>
+            </select> <br>
+
+            <input type="hidden" id="postTableRequest" name="postTableRequest">
+            <input type="submit" value="postTable" name="postTable">
 		</div>
-			<!-- <label for="name">Name:</label>
-            <input class="form-control" type="text" name="name"> -->
-        <button type="submit" class="btn btn-default">Submit</button>
-    </form>
+	</form>
+	<?php
+            function handleDisplayNextOptions($table) {
+                if ($table == "Pokemon") {
+                    header("Location: https://www.students.cs.ubc.ca/~woxtoby/pokemon-selection.php");
+                } else if ($table == "isType") {
+                    header("Location: https://www.students.cs.ubc.ca/~woxtoby/isType-selection.php");
+                } else {
+                    header("Location: https://www.students.cs.ubc.ca/~woxtoby/attack-selection.php");
+                }
+            }
+
+            if (isset($_GET['postTableRequest'])) {
+                handleDisplayNextOptions($_GET['table']);
+            }
+        ?>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

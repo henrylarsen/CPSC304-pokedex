@@ -30,16 +30,33 @@
     </nav>
 Welcome <?php echo $_POST["id"]; ?><br>
 <?php
-	if ($c=oci_connect("ora_woxtoby", "a24563199", "dbhost.students.cs.ubc.ca:1522/stu")) {
+	$c=oci_connect("ora_woxtoby", "a24563199", "dbhost.students.cs.ubc.ca:1522/stu");
+	if ($c) {
 		echo "Successfully connected to Oracle.\n";
-		oci_close($c);
 		
-		$stid = oci_parse($c, 'SELECT id FROM Pokemon');
+		$stid = oci_parse($c, 'SELECT * FROM Pokemon');
 		if (!$stid) {
 			$e = oci_error($c);
 			trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
 		}
 		echo $stid;
+
+		$r = oci_execute($stid);
+		if (!$r) {
+			$e = oci_error($stid);
+			trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+		}
+		print "<br>";
+
+		print "<table border='1'>\n";
+		while ($row = oci_fetch_array($stid, OCI_DEFAULT)) {
+			print "<tr>\n";
+			foreach ($row as $item) {
+				print "    <td>" . ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;") . "</td>\n";
+			}
+			print "</tr>\n";
+		}
+		print "</table>\n";
 	} else {
 		$err = oci_error();
 		echo "Oracle Connect Error " . $err['message'];

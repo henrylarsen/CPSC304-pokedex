@@ -13,8 +13,8 @@
 				<li><a href="./insert.php">INSERT</a></li>
 				<li><a href="./delete.php">DELETE</a></li>
 				<li><a href="./update.php">UPDATE</a></li>
-				<li><a href="./selection.php">SELECTION</a></li>
-				<li class="active"><a href="./projection.php">PROJECTION</a></li>
+				<li class="active"><a href="./selection.php">SELECTION</a></li>
+				<li><a href="./projection.php">PROJECTION</a></li>
 				<li><a href="./join.php">JOIN</a></li>
 				<li><a href="./division.php">DIVISION</a></li>
 				<li class="dropdown">
@@ -28,16 +28,29 @@
     		</ul>
         </div>
     </nav>
-    <form method="GET" action="projection.php">
+	<h3>Now select the attributes and compartors: </h3>
+	<form method="GET" action="isType-selection.php">
 		<div class="form-check">
-		<input type="checkbox" class="form-check-input" name="id" value="id-value">ID<br>
-            <input type="checkbox" class="form-check-input" name="name" value="name-value">Name<br>
-            <input type="checkbox" class="form-check-input" name="height" value="height-value">Height<br>
-            <input type="checkbox" class="form-check-input" name="weight" value="weight-value">Weight<br>
-            <input type="checkbox" class="form-check-input" name="size" value="size-value">Size<br>
+            <h4>Which attributes would you like to project?</h4>
+            <input type="checkbox" class="form-check-input" name="id" value="id-value">ID<br>
+            <input type="checkbox" class="form-check-input" name="type" value="name-value">Type<br>
+            <hr>
+            <h4>Now select which attributes will be compared, and what the selection conditions should be</h4>
+            <p>WHERE  Field1 Opp1 Var1 </p>
+            Field1: <select name="field-1" value="field-1">
+                <option value="id" selected>Id</option>
+                <option value="Tname">Type</option>
+            </select> <br>
+            Opp1: <select name="opp-1" value="opp-1">
+                <option value="=">=</option>
+                <option value=">">></option>
+                <option value="<"><</option>
+                <option value="<>"><></option>
+            </select><br>
+            Var1: <input type="text" name="var-1-text"> <br>
 
-            <input type="hidden" id="getPokemonRequest" name="getPokemonRequest">
-            <input type="submit" value="getPokemon" name="getPokemon">
+            <input type="hidden" id="getTableRequest" name="getTableRequest">
+            <input type="submit" value="getTable" name="getTable">
 		</div>
 	</form>
 	<?php
@@ -78,7 +91,7 @@
 
             function printResult($result) { //prints results from a select statement
                 $listofprojections = getListofProjections();
-                echo "<br>Retrieved data from table Pokemon:<br>";
+                echo "<br>Retrieved data from table isType:<br>";
                 echo "<table border=1>";
                 echo "<tr>";
                 for ($i =0; $i < sizeof($listofprojections); $i++) {
@@ -89,7 +102,7 @@
                 while ($row = oci_fetch_array($result, OCI_BOTH)) {
                     echo "<tr>";
                     for ($i = 0; $i < sizeof($listofprojections); $i++) {
-                        echo "<td>" . $row[$listofprojections[$i]] . "</td>";
+                        echo "<td>" . $row[$i] . "</td>";
                     }
                     echo "<tr>";
                 }    
@@ -98,9 +111,6 @@
 
             function connectToDB() {
                 global $db_conn;
-    
-                // Your username is ora_(CWL_ID) and the password is a(student number). For example,
-                // ora_platypus is the username and a12345678 is the password.
                 $db_conn = oci_connect("ora_woxtoby", "a24563199", "dbhost.students.cs.ubc.ca:1522/stu");
     
                 if ($db_conn) {
@@ -121,45 +131,47 @@
                 oci_close($db_conn);
             }
 
-            function handleProjectRequest($query) {
-                global $db_conn;
-        
-                $result = executePlainSQL($query);
-                printResult($result);
-            }
+            function handlePokemonProjectRequest($query) {
+				global $db_conn;
 
-            function handleGETRequest($query) {
-                if (connectToDB()) {
-                    if (array_key_exists('getPokemon', $_GET)) {
-                        handleProjectRequest($query);
-                    }
-    
-                    disconnectFromDB();
+                $field_1_text = "";
+                if ($_GET['field-1'] == "id") {
+                    $field_1_text = strval($_GET['var-1-text']);
+                } else {
+                    $field_1_text = "'".$_GET['var-1-text']."'";
                 }
-            }
+
+                $bind1 = $_GET['field-1'];
+                $bind2 = $_GET['opp-1'];
+                $bind3 = $field_1_text;
+
+
+                echo "SELECT " . $query . " FROM isType WHERE ". $bind1 . " " . $bind2 . " " . $bind3;
+				printResult(executePlainSQL("SELECT " . $query . " FROM isType WHERE ". $bind1 . " " . $bind2 . " " . $bind3));
+				oci_commit($db_conn);
+			}
 
             function getListofProjections() {
                 $listOfProjections = [];
                     if (isset($_GET['id'])) {
                         array_push($listOfProjections, "ID");
                     }
-                    if (isset($_GET['name'])) {
-                        array_push($listOfProjections, "PNAME");
-                    }
-                    if (isset($_GET['height'])) {
-                        array_push($listOfProjections, "HEIGHT");
-                    }
-                    if (isset($_GET['weight'])) {
-                        array_push($listOfProjections, "WEIGHT");
-                    }
-                    if (isset($_GET['size'])) {
-                        array_push($listOfProjections, "PSIZE");
+                    if (isset($_GET['type'])) {
+                        array_push($listOfProjections, "TName");
                     }
                 return $listOfProjections;
             }
 
+            function handleRequest($query) {
+                if (connectToDB()) {
+                    if (array_key_exists('getTable', $_GET)) {
+                        handlePokemonProjectRequest($query);
+                    }
+                    disconnectFromDB();
+                }
+            }
+
             function makeQuery() {
-                
                 $listOfProjections = getListofProjections();
                 $query = "";
 
@@ -170,14 +182,11 @@
                         $query = $query . $listOfProjections[$i] . ", ";
                     }
                 }
-                print "<br>";
-                print "<p>This is the query: SELECT " . $query . " FROM Pokemon  </p>";
-                $query = "SELECT " . $query . " FROM Pokemon";
                 return $query;
             }
 
-            if (isset($_GET['getPokemonRequest'])) {
-                handleGETRequest(makeQuery());
+            if (isset($_GET['getTableRequest'])) {
+                handleRequest(makeQuery());
             }
         ?>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
