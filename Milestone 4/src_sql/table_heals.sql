@@ -3,9 +3,9 @@ CREATE TABLE Heals
 	instanceNum   INTEGER,
     ID            INTEGER,
     EpisodeNumber INTEGER,
-	PRIMARY KEY (Cname, instanceNum, EpisodeNumber),
+	PRIMARY KEY (Cname, instanceNum, ID, EpisodeNumber),
 	FOREIGN KEY (Cname)
-        REFERENCES ShowCharacter
+        REFERENCES Medic
         ON DELETE CASCADE,
     FOREIGN KEY (ID)
         REFERENCES Pokemon

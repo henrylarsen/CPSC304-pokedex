@@ -17,5 +17,5 @@ START insert_battleAt;
 START insert_trainsAt;
 START insert_buys;
 START insert_catches;
-START insert_heals;
 START insert_medic;
+START insert_heals;
