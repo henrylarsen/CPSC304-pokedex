@@ -26,3 +26,5 @@ Henry Larsen </br>
   </ul>
 <li>Bootstrap was used throughout the project for HTML and CSS</li>
 </ul>
+
+<p>The live project can be found <strong><a href="https://www.students.cs.ubc.ca/~woxtoby/home.php#">here</a></strong></p>
