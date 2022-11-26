@@ -12,5 +12,6 @@ Henry Larsen </br>
 #### View all tables: select table_name from user_tables;
 #### select 'drop table '||table_name||' cascade constraints;' from user_tables;
   
-#### Our runnable complete SQL script can be found in the Milestone 4 directory of our Project Github repository. The file is named 'full_script.sql'
+#### Our runnable complete SQL script can be found [here](https://github.students.cs.ubc.ca/CPSC304-2022W-T1/project_h3z2b_k4k3b_k7j3b/blob/main/Milestone%204/full_script.sql) in the Milestone 4 directory of our Project Github repository. The file is named 'full_script.sql'
+  
 #### Our PHP citation list can be found below :
