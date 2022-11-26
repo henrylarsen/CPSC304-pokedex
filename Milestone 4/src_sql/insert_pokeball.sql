@@ -1,4 +1,4 @@
-INSERT INTO pokeBall(PType) VALUES ('Poké Ball');
+INSERT INTO pokeBall(PType) VALUES ('Poke Ball');
 INSERT INTO pokeBall(PType) VALUES ('Great Ball');
 INSERT INTO pokeBall(PType) VALUES ('Ultra Ball');
 INSERT INTO pokeBall(PType) VALUES ('Master Ball');
