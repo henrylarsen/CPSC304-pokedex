@@ -1,6 +1,11 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<style>
+		.form {
+			margin: 3rem;
+		}
+	</style>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -28,9 +33,10 @@
     		</ul>
         </div>
     </nav>
-    <form action="./nested.php" method="GET">
+    <form action="./nested.php" method="GET" class="form">
         <div class="form-group">
 			<h3>Select Type Names where > 20 pokemon have type</h3>
+			<h5>Returns the count of Pokemon with more than one type, sorted by Pokemon size</h5>
 			<p>SELECT P.Psize, COUNT(P.id) <br>
 				FROM Pokemon P<br>
 				WHERE P.id IN (<br>
@@ -40,7 +46,7 @@
 				GROUP BY P.Psize;<br>
 			</p>
 			<input type="hidden" id="getTableRequest" name="getTableRequest">
-            <input type="submit" value="getTable" name="getTable">
+            <input type="submit" value="getTable" name="getTable" class="btn btn-primary">
         </div>
     </form>
 	<?php
@@ -82,7 +88,7 @@
 		function printResult($result) { //prints results from a select statement
 			$listofprojections = ["P.Psize", "Count(P.id)"];
 			echo "<br>Retrieved data from table Pokemon:<br>";
-			echo "<table border=1>";
+			echo "<table class='table table-hover'>";
 			echo "<tr>";
 			for ($i =0; $i < sizeof($listofprojections); $i++) {
 				echo "<th>" . $listofprojections[$i] . "</th>";

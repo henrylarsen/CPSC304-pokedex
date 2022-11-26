@@ -1,6 +1,20 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        .form {
+            margin: 3rem;
+        }
+        #myCheck {
+			margin: 0.5em;
+		}
+        #var1 {
+            width: 75px;
+        }
+        .btn {
+            margin: 1rem;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -28,36 +42,32 @@
     		</ul>
         </div>
     </nav>
-	<h3>Now select the attributes and compartors: </h3>
-	<form method="GET" action="pokemon-selection.php">
-		<div class="form-check">
-            <h4>Which attributes would you like to project?</h4>
-            <input type="checkbox" class="form-check-input" name="id" value="id-value">ID<br>
-            <input type="checkbox" class="form-check-input" name="name" value="name-value">Name<br>
-            <input type="checkbox" class="form-check-input" name="height" value="height-value">Height<br>
-            <input type="checkbox" class="form-check-input" name="weight" value="weight-value">Weight<br>
-            <input type="checkbox" class="form-check-input" name="size" value="size-value">Size<br>
+	<form method="GET" action="pokemon-selection.php" class="form">
+            <h3>Now, select attributes and comparators: </h3>
+            <p>Which attributes would you like to project?</p>
+            <input type="checkbox" id="myCheck" name="id" value="id-value">ID<br>
+            <input type="checkbox" id="myCheck" name="name" value="name-value">Name<br>
+            <input type="checkbox" id="myCheck" name="height" value="height-value">Height<br>
+            <input type="checkbox" id="myCheck" name="weight" value="weight-value">Weight<br>
+            <input type="checkbox" id="myCheck" name="size" value="size-value">Size<br>
             <hr>
             <h4>Now select which attributes will be compared, and what the selection conditions should be</h4>
-            <p>WHERE  Field1 = :Var1 AND Field2 > :Var2 </p>
-            Field1: <select name="field-1" value="field-1">
+            <p>WHERE  Field1 = Var1 AND Field2 > Var2 </p>
+            WHERE <select name="field-1" value="field-1">
                 <option value="id" selected>Id</option>
                 <option value="pname">Name</option>
                 <option value="height">Height</option>
                 <option value="weight">Weight</option>
                 <option value="psize">Size</option>
-            </select> <br>
-            Var1: <input type="text" name="var-1-text"> <br>
-            Field2: <select name="field-2" value="field-2">
+            </select> = <input type="text" name="var-1-text" placeholder="Var1" id="var1"> AND 
+            <select name="field-2" value="field-2">
                 <option value="id" selected>Id</option>
                 <option value="height">Height</option>
                 <option value="weight">Weight</option>
-            </select> <br>
-            Var2:  <input type="text" name="var-2-text"> <br>
+            </select> > <input type="text" name="var-2-text" id="var1" placeholder="Var2"> <br>
 
             <input type="hidden" id="getTableRequest" name="getTableRequest">
-            <input type="submit" value="getTable" name="getTable">
-		</div>
+            <input type="submit" value="SELECT" name="getTable" class="btn btn-primary">
 	</form>
 	<?php
             $success = true;
@@ -98,7 +108,7 @@
             function printResult($result) { //prints results from a select statement
                 $listofprojections = getListofProjections();
                 echo "<br>Retrieved data from table Pokemon:<br>";
-                echo "<table border=1>";
+                echo "<table class='table table-hover'>";
                 echo "<tr>";
                 for ($i =0; $i < sizeof($listofprojections); $i++) {
                     echo "<th>" . $listofprojections[$i] . "</th>";
@@ -166,7 +176,7 @@
                 $bind4 = $field_2_text;
 
 
-                echo "SELECT " . $query . " FROM Pokemon WHERE ". $bind1 . " = ". $bind2 ." AND ". $bind3 ." > ". $bind4;
+                echo "<p class='form'>Executing <mark>SELECT " . $query . " FROM Pokemon WHERE ". $bind1 . " = ". $bind2 ." AND ". $bind3 ." > ". $bind4 . "</mark></p>";
 				printResult(executePlainSQL("SELECT " . $query . " FROM Pokemon WHERE ". $bind1 . " = ". $bind2 ." AND ". $bind3 ." > ". $bind4));
 				oci_commit($db_conn);
 			}

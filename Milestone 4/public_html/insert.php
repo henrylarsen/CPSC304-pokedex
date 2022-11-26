@@ -1,6 +1,14 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<style>
+		.form {
+			margin: 1em;
+		}
+		.input-field {
+			margin: 1em;
+		}
+	</style>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -28,14 +36,17 @@
     		</ul>
         </div>
     </nav>
-    <form method="POST" action="insert.php">
-		Name: <input type="text" name="name" value=""><br>
-		Height: <input type="text" name="height" value=""><br>
-		Weight: <input type="text" name="weight" value=""><br>
-		Size: <input type="text" name="size" value=""><br>
+    <form method="POST" action="insert.php" class="form">
+		<h3>Insert a new type of Pokemon into the <mark>pokemon</mark> table</h3>
+		<p>Specify values for each of the following attributes:</p>
+		Name: <input type="text" name="name" value="" class="input-field"><br>
+		Height: <input type="text" name="height" value="" class="input-field"><br>
+		Weight: <input type="text" name="weight" value="" class="input-field"><br>
+		Size: <input type="text" name="size" value="" class="input-field"><br>
+		<p><mark>A unique ID will be automatically generated.</mark></p><br>
 
 		<input type="hidden" id="postPokemonRequest" name="postPokemonRequest">
-		<input type="submit" value="postPokemon" name="postPokemon">
+		<input type="submit" value="Insert Pokemon" name="postPokemon" class="btn btn-primary">
 	</form>
 	<?php
             $success = true;
@@ -144,7 +155,7 @@
 
 				//INSERT INTO Pokemon(id,height,weight,Pname,PSize) VALUES (1,0.7,6.9,'Bulbasaur','SMALL')
 				executeBoundSQL("insert into Pokemon(id,height,weight,Pname,Psize) values (" . $numRows . ", :bind2, :bind3, :bind1, :bind4)", $alltuples);
-				echo("insert into Pokemon(id,height,weight,Pname,Psize) value (" . $numRows . ", " . $_POST['name'] . ", " . $_POST['height'] . ", " . $_POST['weight'] . ", " . $_POST['size'] . ")");
+				echo("Executing <mark>insert into Pokemon(id,height,weight,Pname,Psize) value (" . $numRows . ", " . $_POST['name'] . ", " . $_POST['height'] . ", " . $_POST['weight'] . ", " . $_POST['size'] . ")</mark>");
 				oci_commit($db_conn);
 			}
 
@@ -154,9 +165,8 @@
 				$result = executePlainSQL("SELECT Count(*) FROM Pokemon");
 
 				if (($row = oci_fetch_row($result)) != false) {
-					echo "<br> The number of tuples in demoTable: " . $row[0] . "<br>";
+					return $row[0];
 				}
-				return $row[0];
 			}
 
 			function handlePostRequest() {

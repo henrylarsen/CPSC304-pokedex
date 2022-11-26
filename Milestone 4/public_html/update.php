@@ -1,6 +1,16 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<style>
+		.form {
+			margin: 1em;
+		}
+		.input-field {
+			margin: 0.5em;
+		}
+		/* From  https://www.computerhope.com/issues/ch001391.htm */
+		.highlightme { background-color: #f56358; width: 250px; }
+	</style>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -28,15 +38,18 @@
     		</ul>
         </div>
     </nav>
-    <form method="POST" action="update.php">
-		ID: <input type="text" name="id" value=""><br>
+    <form method="POST" action="update.php" class="form">
+		<h3>Specify the ID of the Pokemon you would like to update the attributes of</h3>
+		ID: <input type="text" name="id" value="" class="input-field"><br>
 		<hr>
-		Name: <input type="text" name="name" value=""><br>
-		Height: <input type="text" name="height" value=""><br>
-		Weight: <input type="text" name="weight" value=""><br>
-		Size: <input type="text" name="size" value=""><br>
+		<h3>Specify the values you would like to update the following attributes to</h3>
+		<p class="highlightme">Any fields left blank will <strong>not</strong> be updated</p>
+		Name: <input type="text" name="name" value="" class="input-field"><br>
+		Height: <input type="text" name="height" value="" class="input-field"><br>
+		Weight: <input type="text" name="weight" value="" class="input-field"><br>
+		Size: <input type="text" name="size" value="" class="input-field"><br>
 		<input type="hidden" id="postPokemonRequest" name="postPokemonRequest">
-		<input type="submit" value="postPokemon" name="postPokemon">
+		<input type="submit" value="Update" name="postPokemon" class="btn btn-primary">
 	</form>
 	<?php
             $success = true;

@@ -2,6 +2,20 @@
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
+<style>
+        .form {
+            margin: 3rem;
+        }
+        #myCheck {
+			margin: 0.5em;
+		}
+        #var1 {
+            width: 75px;
+        }
+        .btn {
+            margin: 1rem;
+        }
+    </style>
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -28,7 +42,7 @@
     		</ul>
         </div>
     </nav>
-    <form method="GET" action="join.php"">
+    <form method="GET" action="join.php" class="form">
 		Pokeball Type: <select name="pokeball" value="pokeball">
 					<option value="Poke Ball">Poke Ball</option>
 					<option value="Great Ball">Great Ball</option>
@@ -36,7 +50,7 @@
 					<option value="Master Ball">Master Ball</option>
 				</select><br>
 	<input type="hidden" id="getTableRequest" name="getTableRequest">
-    <input type="submit" value="getTable" name="getTable">
+    <input type="submit" value="JOIN" name="getTable" class="btn btn-primary">
     </form>
 	<?php
 		$success = true;
@@ -77,7 +91,7 @@
 		function printResult($result) { //prints results from a select statement
 			$listofprojections = ["showCharacter.CName", "buys.PType"];
 			echo "<br>Retrieved data from table isType:<br>";
-			echo "<table border=1>";
+			echo "<table class='table table-hover'>";
 			echo "<tr>";
 			for ($i =0; $i < sizeof($listofprojections); $i++) {
 				echo "<th>" . $listofprojections[$i] . "</th>";
@@ -122,7 +136,7 @@
 			$bind1 = "'".$_GET['pokeball']."'";
 
 
-			echo "SELECT showCharacter.CName, buys.PType FROM showCharacter INNER JOIN buys ON showCharacter.CName = buys.CName AND buys.PType = ". $bind1;
+			echo "<p class='form'>Executing <mark>SELECT showCharacter.CName, buys.PType FROM showCharacter INNER JOIN buys ON showCharacter.CName = buys.CName AND buys.PType = ". $bind1 . "</mark></p>";
 			printResult(executePlainSQL("SELECT showCharacter.CName, buys.PType FROM showCharacter INNER JOIN buys ON showCharacter.CName = buys.CName AND buys.PType = ". $bind1));
 			oci_commit($db_conn);
 		}

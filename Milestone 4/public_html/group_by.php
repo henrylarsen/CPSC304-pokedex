@@ -1,6 +1,11 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<style>
+		.form {
+			margin: 3rem;
+		}
+	</style>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -28,7 +33,7 @@
     		</ul>
         </div>
     </nav>
-    <form action="./group_by.php" method="GET">
+    <form action="./group_by.php" method="GET" class="form">
         <div class="form-group">
 			<h3>Selects the name and height of pokemon with tallest height of its size</h3>
 			<p>SELECT Pokemon.Psize, max(height) <br>
@@ -36,7 +41,7 @@
 				GROUP BY Pokemon.Psize; <br>
 			</p>
 			<input type="hidden" id="getTableRequest" name="getTableRequest">
-            <input type="submit" value="getTable" name="getTable">
+            <input type="submit" value="SELECT" name="getTable" class="btn btn-primary">
         </div>
     </form>
 	<?php
@@ -78,7 +83,7 @@
 		function printResult($result) { //prints results from a select statement
 			$listofprojections = ["Psize", "height"];
 			echo "<br>Retrieved data from table Pokemon:<br>";
-			echo "<table border=1>";
+			echo "<table class='table table-hover'>";
 			echo "<tr>";
 			for ($i =0; $i < sizeof($listofprojections); $i++) {
 				echo "<th>" . $listofprojections[$i] . "</th>";

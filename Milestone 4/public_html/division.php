@@ -1,6 +1,11 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<style>
+		.form {
+			margin: 3rem;
+		}
+	</style>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -28,7 +33,7 @@
     		</ul>
         </div>
     </nav>
-    <form action="./division.php" method="GET">
+    <form action="./division.php" method="GET" class="form">
         <div class="form-group">
 			<h3>Selects all pokemon with types Grass and Poison</h3>
 			<p>SELECT Pname <br>
@@ -42,7 +47,7 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE I.id = P.id AND T.TName = I.TName)) <br>
 			</p>
 			<input type="hidden" id="getTableRequest" name="getTableRequest">
-            <input type="submit" value="getTable" name="getTable">
+            <input type="submit" value="DIVIDE" name="getTable" class="btn btn-primary">
         </div>
     </form>
 	<?php
@@ -83,8 +88,8 @@
 
 		function printResult($result) { //prints results from a select statement
 			$listofprojections = ["Pname"];
-			echo "<br>Retrieved data from table isType:<br>";
-			echo "<table border=1>";
+			echo "<br>Retrieved data from table Pokemon:<br>";
+			echo "<table class='table table-hover'>";
 			echo "<tr>";
 			for ($i =0; $i < sizeof($listofprojections); $i++) {
 				echo "<th>" . $listofprojections[$i] . "</th>";
@@ -124,12 +129,7 @@
 		}
 
 		function handlePokemonProjectRequest() {
-			global $db_conn;
-
-			$bind1 = "'".$_GET['pokeball']."'";
-
-
-			
+			global $db_conn;			
 			printResult(executePlainSQL("SELECT Pname
 			FROM Pokemon P
 			WHERE NOT EXISTS (

@@ -1,6 +1,14 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<style>
+		.form {
+			margin: 1em;
+		}
+		.input-field {
+			margin: 1em;
+		}
+	</style>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -28,11 +36,12 @@
     		</ul> 
         </div>
     </nav>
-    <form method="POST" action="delete.php">
-		ID: <input type="text" name="id" value=""><br>
+    <form method="POST" action="delete.php" class="form">
+		<h3>Specify the ID of the pokemon you would like to delete from the Pokemon table</h3>
+		ID: <input type="text" name="id" value="" class="input-field"><br>
 		
 		<input type="hidden" id="postPokemonRequest" name="postPokemonRequest">
-		<input type="submit" value="postPokemon" name="postPokemon">
+		<input type="submit" value="Delete" name="postPokemon" class="btn btn-danger">
 	</form>
 	<?php
             $success = true;
@@ -136,7 +145,7 @@
 
 				//INSERT INTO Pokemon(id,height,weight,Pname,PSize) VALUES (1,0.7,6.9,'Bulbasaur','SMALL')
 				executeBoundSQL("delete from Pokemon where id=:bind1", $alltuples);
-				echo("delete from Pokemon where id=" .strval($_POST['id']));
+				echo("Executing <mark>delete from Pokemon where id=" .strval($_POST['id']."</mark>"));
 				oci_commit($db_conn);
 			}
 

@@ -1,6 +1,17 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+		.myform {
+			margin: 1em;
+		}
+		#myCheck {
+			margin: 0.5em;
+		}
+        .btn {
+            margin-top: 1em;
+        }
+	</style>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -28,17 +39,18 @@
     		</ul>
         </div>
     </nav>
-    <form method="GET" action="projection.php">
-		<div class="form-check">
-		<input type="checkbox" class="form-check-input" name="id" value="id-value">ID<br>
-            <input type="checkbox" class="form-check-input" name="name" value="name-value">Name<br>
-            <input type="checkbox" class="form-check-input" name="height" value="height-value">Height<br>
-            <input type="checkbox" class="form-check-input" name="weight" value="weight-value">Weight<br>
-            <input type="checkbox" class="form-check-input" name="size" value="size-value">Size<br>
+    <form method="GET" action="./projection.php" class="myform" >
+        <h3>Select which attributes you would like to project from the Pokemon table</h3>
+        <div id="myId">
+            <input type="checkbox" id="myCheck" name="id" value="id-value">ID<br>
+            <input type="checkbox" id="myCheck" name="name" value="name-value">Name<br>
+            <input type="checkbox" id="myCheck" name="height" value="height-value">Height<br>
+            <input type="checkbox" id="myCheck" name="weight" value="weight-value">Weight<br>
+            <input type="checkbox" id="myCheck" name="size" value="size-value">Size<br>
 
-            <input type="hidden" id="getPokemonRequest" name="getPokemonRequest">
-            <input type="submit" value="getPokemon" name="getPokemon">
-		</div>
+            <input type="hidden" id="getPokemonRequest" name="getPokemonRequest" class="">
+            <input type="submit" value="Project Pokemon" name="getPokemon" class="btn btn-primary">
+        </div>
 	</form>
 	<?php
             $success = true;
@@ -79,20 +91,21 @@
             function printResult($result) { //prints results from a select statement
                 $listofprojections = getListofProjections();
                 echo "<br>Retrieved data from table Pokemon:<br>";
-                echo "<table border=1>";
+                echo "<table class='table table-hover'>";
                 echo "<tr>";
                 for ($i =0; $i < sizeof($listofprojections); $i++) {
                     echo "<th>" . $listofprojections[$i] . "</th>";
                 }
                 echo "</tr>";
-    
+                echo "<tbody class='table-group-divider'>";
                 while ($row = oci_fetch_array($result, OCI_BOTH)) {
                     echo "<tr>";
                     for ($i = 0; $i < sizeof($listofprojections); $i++) {
                         echo "<td>" . $row[$listofprojections[$i]] . "</td>";
                     }
                     echo "<tr>";
-                }    
+                }   
+                echo "</tbody>"; 
                 echo "</table>";
             }
 
@@ -171,7 +184,7 @@
                     }
                 }
                 print "<br>";
-                print "<p>This is the query: SELECT " . $query . " FROM Pokemon  </p>";
+                print "<p> Executing <mark> SELECT " . $query . " FROM Pokemon</mark>  </p>";
                 $query = "SELECT " . $query . " FROM Pokemon";
                 return $query;
             }

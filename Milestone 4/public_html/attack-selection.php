@@ -1,7 +1,22 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        .form {
+            margin: 3rem;
+        }
+        #myCheck {
+			margin: 0.5em;
+		}
+        #var1 {
+            width: 75px;
+        }
+        .btn {
+            margin: 1rem;
+        }
+    </style>
 </head>
+
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -29,42 +44,41 @@
         </div>
     </nav>
 	<h3>Now select the attributes and compartors: </h3>
-	<form method="GET" action="attack-selection.php">
+	<form method="GET" action="attack-selection.php" class="form">
 		<div class="form-check">
             <h4>Which attributes would you like to project?</h4>
-            <input type="checkbox" class="form-check-input" name="attackname" value="attackname-value">Attack Name<br>
-            <input type="checkbox" class="form-check-input" name="type" value="type-value">Type<br>
-            <input type="checkbox" class="form-check-input" name="damage" value="damage-value">Damage<br>
+            <input type="checkbox" class="form-check-input" id="myCheck" name="attackname" value="attackname-value">Attack Name<br>
+            <input type="checkbox" class="form-check-input" name="type" id="myCheck" value="type-value">Type<br>
+            <input type="checkbox" class="form-check-input" name="damage" id="myCheck" value="damage-value">Damage<br>
             <hr>
             <h4>Now select which attributes will be compared, and what the selection conditions should be</h4>
             <p>WHERE  Field1 Opp1 Var1 OR Field2 Opp2 Var2</p>
-            Field1: <select name="field-1" value="field-1">
-                <option value="attackname" selected>Attack Name</option>
-                <option value="damage">Type</option>
-                <option value="damage">Damage</option>
-            </select> <br>
-            Opp1: <select name="opp-1" value="opp-1">
-                <option value="=">=</option>
-                <option value=">">></option>
-                <option value="<"><</option>
-                <option value="<>"><></option>
-            </select><br>
-            Var1: <input type="text" name="var-1-text"> <br>
-            Field2: <select name="field-2" value="field-2">
+            WHERE <select name="field-1" value="field-1">
                 <option value="attackname" selected>Attack Name</option>
                 <option value="type">Type</option>
                 <option value="damage">Damage</option>
-            </select> <br>
-            Opp2: <select name="opp-2" value="opp-2">
-                <option value=">">></option>
+            </select>
+            <select name="opp-1" value="opp-1">
                 <option value="=">=</option>
+                <option value=">">></option>
                 <option value="<"><</option>
                 <option value="<>"><></option>
-            </select><br>
-            Var2: <input type="text" name="var-2-text"> <br>
+            </select>
+            <input type="text" name="var-1-text" placeholder="Var1" id="var1"> OR 
+            <select name="field-2" value="field-2">
+                <option value="attackname">Attack Name</option>
+                <option value="type">Type</option>
+                <option value="damage" selected >Damage</option>
+            </select>
+            <select name="opp-2" value="opp-2">
+                <option value=">">></option>
+                <option value="=" selected>=</option>
+                <option value="<"><</option>
+                <option value="<>"><></option>
+            </select> <input type="text" name="var-2-text" placeholder="Var2" id="var1"> <br>
 
             <input type="hidden" id="getTableRequest" name="getTableRequest">
-            <input type="submit" value="getTable" name="getTable">
+            <input type="submit" value="getTable" name="getTable" class="btn btn-primary">
 		</div>
 	</form>
 
@@ -159,7 +173,7 @@
         function printResult($result) { //prints results from a select statement
             $listofprojections = getListofProjections();
             echo "<br>Retrieved data from table isType:<br>";
-            echo "<table border=1>";
+            echo "<table class='table table-hover'>";
             echo "<tr>";
             for ($i =0; $i < sizeof($listofprojections); $i++) {
                 echo "<th>" . $listofprojections[$i] . "</th>";
@@ -211,7 +225,7 @@
             $bind6 = $field_2_text;
 
 
-            echo "SELECT " . $query . " FROM Attack WHERE ". $bind1 . " " . $bind2 . " " . $bind3 ." OR ". $bind4 ." " . $bind5 . " ". $bind6;
+            echo "<p class='form'>Executing <mark>SELECT " . $query . " FROM Attack WHERE ". $bind1 . " " . $bind2 . " " . $bind3 ." OR ". $bind4 ." " . $bind5 . " ". $bind6 ."</mark></p>";
             printResult(executePlainSQL("SELECT " . $query . " FROM Attack WHERE ". $bind1 . " " . $bind2 . " " . $bind3 ." OR ". $bind4 ." " . $bind5 . " ". $bind6));
             oci_commit($db_conn);
         }

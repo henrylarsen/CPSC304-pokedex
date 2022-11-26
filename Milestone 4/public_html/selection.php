@@ -1,6 +1,11 @@
 <html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<style>
+		.form {
+			margin: 1em;
+		}
+	</style>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -28,18 +33,16 @@
     		</ul>
         </div>
     </nav>
-	<h3>Select a table then clicke next</h3>
-	<form method="GET" action="selection.php">
-		<div class="form-check">
-            <select name="table" value="table">
+	<h3>Select a table to Select from, then click Next</h3>
+	<form method="GET" action="selection.php" class="form">
+            <select name="table" class="form-select">
                 <option value="Pokemon" selected>Pokemon</option>
                 <option value="isType">isType</option>
                 <option value="Attack">Attack</option>
             </select> <br>
 
             <input type="hidden" id="postTableRequest" name="postTableRequest">
-            <input type="submit" value="postTable" name="postTable">
-		</div>
+            <input type="submit" value="Next" name="postTable" class="form btn btn-primary">
 	</form>
 	<?php
             function handleDisplayNextOptions($table) {
