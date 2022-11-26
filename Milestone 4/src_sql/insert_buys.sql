@@ -1,4 +1,4 @@
-INSERT INTO buys(PType, EpisodeNumber, Cname) VALUES ('Poké Ball', 1, 'Ash');
+INSERT INTO buys(PType, EpisodeNumber, Cname) VALUES ('Poke Ball', 1, 'Ash');
 INSERT INTO buys(PType, EpisodeNumber, Cname) VALUES ('Safari Ball', 35, 'Ash');
 INSERT INTO buys(PType, EpisodeNumber, Cname) VALUES ('Love Ball', 80, 'Tyreese');
 INSERT INTO buys(PType, EpisodeNumber, Cname) VALUES ('Fast Ball', 81, 'Abneet');
