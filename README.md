@@ -11,3 +11,5 @@ Henry Larsen </br>
 #### start <filename>.sql;
 #### View all tables: select table_name from user_tables;
 #### select 'drop table '||table_name||' cascade constraints;' from user_tables;
+  
+  Where is our list of commands for our sql script, 
