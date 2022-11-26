@@ -12,6 +12,7 @@ Henry Larsen </br>
 
 #### Citations
 #### 1. The general structure of most .php files is inspired by the oracle-test.php file provided for CPSC 304 Tutorial 7. In particular, the following methods feature code from oracle-test.php:
+<h3 style="text-indent: 15em;">
 ####        a) debugAlertMessage()
 ####        b) executePlainSQL()
 ####        c) executeBoundSQL()
