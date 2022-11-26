@@ -12,19 +12,19 @@ Henry Larsen </br>
 
 #### Citations
 <ul>
-<li>1. The general structure of most .php files is inspired by the oracle-test.php file provided for CPSC 304 Tutorial 7. In particular, the following methods feature code from oracle-test.php:</li>
+<li>The general structure of most .php files is inspired by the oracle-test.php file provided for CPSC 304 Tutorial 7. In particular, the following methods feature code from oracle-test.php:</li>
     <ul>
-<li>a) debugAlertMessage()</li>
-<li>b) executePlainSQL()</li>
-<li>c) executeBoundSQL()</li>
-<li>d) connectToDB()</li>
-<li>e) disconnectFromDB()</li>
-<li>f) handle[SQL-statement]Request()</li>
-<li>g) handlePostRequest()</li>
-<li>h) printResult()</li>
-<li>i) handleGetRequest()</li>
+<li>debugAlertMessage()</li>
+<li>executePlainSQL()</li>
+<li>executeBoundSQL()</li>
+<li>connectToDB()</li>
+<li>disconnectFromDB()</li>
+<li>handle[SQL-statement]Request()</li>
+<li>handlePostRequest()</li>
+<li>printResult()</li>
+<li>handleGetRequest()</li>
   </ul>
-<li>2. Bootstrap was used throughout the project for HTML and CSS</li>
+<li>Bootstrap was used throughout the project for HTML and CSS</li>
 </ul>
 
 ## SQL commands
